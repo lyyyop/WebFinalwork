@@ -19,13 +19,10 @@ const Book = mongoose.model("Book" , BookSchema);
 app.use('/',express.static('public'))
 
 app.get("/a",(req,res)=>{
-    // res.send(req.query)
-    console.log(req.query)
-    const user1 = new User({ name: req.query.Uname,password:req.query.Upassword });
-    user1.save()
-    
-    // ejs.renderFile("index.html",(err,str)=>{
-    //     res.send(str)
-    // })
+    if(req.query.Upassword===req.query.UpasswordConf){
+        const user1 = new User({ name: req.query.Uname,password:req.query.Upassword });
+        user1.save()
+    }
+    res.sendFile('public/login.html', {"root": __dirname}) 
 })
 app.listen(10232)
