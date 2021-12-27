@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/css-reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>图书管理系统</title>
 </head>
-<body>
-    <p>-----zyy232--------看看--------------</p>
-    <form name="myForm" action="/input" method="get"> 
-        数据1:<input type="text" name="first"><br>
-        数据2:<input type="text" name="second"><br>
-            <input type="submit" name="submit1" value="Write">
-            <input type="submit" name="submit1" value="Read">
-    </form>
+
+<body id="index">
+    <main>
+        <h1>图书</h1>
+        <a class="login-link" href="/login.html">登录</a>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Publisher</th>
+                    <th>Language</th>
+                    <th>Pages</th>
+                    <th>Year</th>
+                </tr>
+
+            </table>
+        </div>
+    </main>
 </body>
 </html>
