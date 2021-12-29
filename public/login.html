@@ -11,20 +11,18 @@
 
 <body id="login">
     <main>
-        <form class="login" action="#" onsubmit="return false;">
+        <form class="login" action="/login" method="GET">
             <h3>登录</h3>
-            <input type="email" name="email" required="" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
+            <input type="text" name="Uname" placeholder="用户名">
+            <input type="password" name="Upassword" placeholder="密码">
 
-            <input type="submit" name="login" value="Login">
+            <input type="submit" name="login" value="登录">
             <div>
                 <a href="/register.html">创建新用户</a>
             </div>
         </form>
     </main>
-
-
-    <script src="./js/login.js"></script>
+    
 </body>
 
 </html>
