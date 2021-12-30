@@ -22,13 +22,13 @@ function addBook() {
 
 function checkAddStatus(result,newBook, inputs) {
     if (result.status === true) {
-        // message.innerHTML = "Book added &#x2713;";
-        // message.style.opacity = "1";
+        message.innerHTML = "Book added &#x2713;";
+        message.style.opacity = "1";
         setTimeout(function () {message.style.removeProperty("opacity");}, 3000)
         inputs.forEach(input =>{input.value = "";})
         window.location.replace("/main.html");
     } else {
-        message.innerHTML = "错误！";
+        message.innerHTML = "添加失败！只有管理员能操作";
         message.style.opacity = "1";
         setTimeout(function () {message.style.removeProperty("opacity");}, 3000)
     }

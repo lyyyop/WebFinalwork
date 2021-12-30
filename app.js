@@ -13,7 +13,7 @@ const UserSchema = {
     password: String,
     admin: Boolean
 };
-const User = mongoose.model("User" , UserSchema);
+const User = mongoose.model("User" , UserSchema);//用户数据库
 const BookSchema = {
     author: String,
     title: String,
@@ -21,7 +21,7 @@ const BookSchema = {
     publisher: String,
     price: Number
   };
-const Book = mongoose.model("Book" , BookSchema);
+const Book = mongoose.model("Book" , BookSchema);//图书数据库
 
 app.use(session({
     secret: 'secret key', //使用随机自定义字符串进行加密
@@ -61,14 +61,22 @@ app.post("/login",function(req,res){
 })
 
 app.post("/admin/add-book",function(req,res){
-    //console.log(req)
-    const book1 = new Book({ author:req.body.author,place:req.body.place,publisher:req.body.publisher,price:req.body.price,title:req.body.title});
-    book1.save()
-    res.status(200).send({status: true, msg: "添加成功！"});   
+    console.log(req.session.user)
+    if(req.session.user){
+        const book1 = new Book({ author:req.body.author,place:req.body.place,publisher:req.body.publisher,price:req.body.price,title:req.body.title});
+        book1.save()
+        res.status(200).send({status: true, msg: "添加成功！"});   
+    }else{
+        res.status(200).send({status: false, msg: "不是管理员，添加失败！"}); 
+    }   
 })
 app.get("/get-books", function(req, res) {
     Book.find().then(function(data) {
         res.status(200).send({status: true, msg: "Books on the way!", books: data});
     })
   })
+app.get("/logout",function(req,res){
+    req.session.destroy();
+    res.redirect("/index.html");	
+})
 app.listen(10232)
