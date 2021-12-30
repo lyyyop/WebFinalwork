@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
     <link rel="stylesheet" href="../css/css-reset.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>图书管理系统</title>
+    <title>库内图书</title>
 </head>
 
-<body id="index">
+<body id="dashboard">
     <main>
-        <h1>图书</h1>
-
+        <h1>库内图书</h1>
+        <a href="/admin/add.html">添加图书</a>
+        <a class="login-link" href="/logout">登出</a>       
         <div class="table-container">
             <table>
                 <tr>
-                    <th>Author</th>
-                    <th>Title</th>
-                    <th>Publisher</th>
-                    <th>Language</th>
-                    <th>Pages</th>
-                    <th>Year</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>出版社</th>
+                    <th>位置</th>
+                    <th>价格</th>
+                    <th></th>
                 </tr>
 
             </table>
         </div>
     </main>
+    <script src="main.js"></script>
 </body>
+
 </html>
