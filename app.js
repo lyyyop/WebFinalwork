@@ -1,9 +1,7 @@
 const express=require('express')
 const mongoose = require('mongoose');
 const app = express();
-const ejs=require('ejs')
 const session = require('express-session');
-const cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
