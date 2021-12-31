@@ -9,11 +9,16 @@
     <title>库内图书</title>
 </head>
 
-<body id="dashboard">
+<body id="main">
     <main>
+        <div class="search1">
         <h1>库内图书</h1>
-        <a href="/admin/add.html">添加图书</a>
-        <a class="login-link" href="/logout" >登出</a>       
+        <a class="login-link" href="/logout" >登出</a> 
+            <input type="text" class="search" name='title' placeholder="输入书名" required="">
+            <input type="submit" class="btn" value='搜索'>
+        </div>
+        <input type="button" name="addBook" value="添加图书" onclick="location.href=('admin/add.html')">
+
         <div class="table-container">
             <table>
                 <tr>

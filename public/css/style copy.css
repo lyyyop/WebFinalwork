@@ -55,34 +55,45 @@ form input[type="submit"] {
 }
 
 input[type=button]{
+    /* margin: 0 auto; */
     padding: 10px 40px;
     color: white;
     border: none;
     display: block;
     background: #21252E;
+    /* min-width: 10px; */
     margin-top: 20px;
+    /* cursor: pointer; */
 }
 
 
  .search1 {
-    height: 50px;
+    height: 70px;
+    width: 800px;
+    margin: 100px auto 0 auto; 
 }
+.parent {
+    position: relative;
+    border: none;
+} 
 .search {
     width: 300px;
     height: 40px;
     border-radius: 18px;
-    top: -6px;
-    left: 190px;
+    outline: none;
     border: 1px solid #ccc;
     padding-left: 20px;
     position: absolute;
 }
 .btn {
+    height: 35px;
+    width: 35px;
     position: absolute;
+    /* background: url("images/topbar.png") no-repeat -2px -99px;  */
     top: 6px;
-    left: 461px;
+    left: 285px;
     border: none;
-    color: #616b6b;
+    outline: none;
     cursor: pointer;} 
 
 

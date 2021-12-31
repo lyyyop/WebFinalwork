@@ -31,6 +31,7 @@ function checkLoginStatus(result){
     }
     else{
         console.log("Error");
-        window.location.replace("/login.html");
+        message.innerHTML = "账号或密码错误！";
+        message.style.opacity = "1";
     }
 }

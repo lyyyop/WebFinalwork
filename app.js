@@ -72,11 +72,17 @@ app.post("/admin/add-book",function(req,res){
 })
 app.get("/get-books", function(req, res) {
     Book.find().then(function(data) {
-        res.status(200).send({status: true, msg: "Books on the way!", books: data});
+        res.status(200).send({status: true, msg: "okk!", books: data});
     })
   })
 app.get("/logout",function(req,res){
     req.session.destroy();
     res.redirect("/index.html");	
+})
+app.post('/search',function(req,res){
+    Book.find({title:req.body.search}).then(function(data){
+        console.log(data)
+        res.status(200).send({status: true, msg: "okkk!", books: data});
+    })
 })
 app.listen(10232)

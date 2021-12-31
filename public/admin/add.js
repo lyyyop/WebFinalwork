@@ -6,8 +6,8 @@ function addBook() {
     const inputs = document.querySelectorAll("input");
     console.log(inputs[0].value);
     let newBook = {
-        author: inputs[0].value,
-        title: inputs[1].value,
+        title: inputs[0].value,
+        author: inputs[1].value,
         publisher: inputs[2].value,
         price: inputs[3].value,
         place: inputs[4].value
@@ -17,10 +17,10 @@ function addBook() {
         credentials: 'include',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newBook)
-    }).then(result => result.json()).then(result => checkAddStatus(result,newBook, inputs));
+    }).then(result => result.json()).then(result => checkAddStatus(result, inputs));
 }
 
-function checkAddStatus(result,newBook, inputs) {
+function checkAddStatus(result,inputs) {
     if (result.status === true) {
         message.innerHTML = "Book added &#x2713;";
         message.style.opacity = "1";
